@@ -6,19 +6,19 @@ import {v4 as uuid} from 'uuid'
 
 const teamMemberList = [
   {
-  userName: 'jfinity',
-  email: 'jfinity1992@gmail.com',
-  role: 'backend',
+  userName: 'Cori',
+  email: 'CSCori@gmail.com',
+  role: 'Designer',
 },
 ]
-
+const initialValues = {
+  username:'',
+  email:'',
+  role:'',
+}
 function App() {
   const [teamMembers, setTeamMembers] = useState(teamMemberList)
-  const [formValues, setFormValues] = useState({
-    username:'',
-    email:'',
-    role:'',
-  })
+  const [formValues, setFormValues] = useState(initialValues)
   // function onChange(evt){
 
   // }
@@ -38,7 +38,7 @@ function App() {
       return
     }
     setTeamMembers(teamMembers => [...teamMembers, newTeamMember])
-    
+    setFormValues(initialValues)
   }
 
 
